@@ -1,22 +1,10 @@
 #!/bin/bash
-
-# Vérifier si au moins un argument est fourni
-if [ "$#" -eq 0 ]; then
-    echo "Usage : $0 <arg1> <arg2> ..."
-    exit 1
-fi
-
-echo "Liste des arguments :"
-
-# Boucle sur tous les arguments avec $@
-for arg in "$@"; do
-    echo "$arg"
+#Lecture  de ligne Tapée par l'utilisateur et stockage
+read -a arg
+#Initialisation du compteur à 1
+i=1
+for arg in "${arg[@]}"; do
+    echo "Argument $((i++)): $arg" #Affiche chaque argument avec son numéro
 done
 
-echo "--- Méthode avec shift ---"
-
-# Boucle en utilisant shift
-while [ "$#" -gt 0 ]; do
-    echo "$1"
-    shift
-done
+S
